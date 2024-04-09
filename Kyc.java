@@ -38,15 +38,15 @@ public class KYC {
 		startbtn.click();
 		
 		WebElement mob= driver.findElement(By.id("Mobile"));
-		mob.sendKeys("9828745444");
+		mob.sendKeys("9667634447");
 		
 		WebElement email= driver.findElement(By.id("email"));
-		email.sendKeys("Sylkdaaa@gmail.com");
+		email.sendKeys("Syrfkdjkaa@gmail.com");
 		
 		driver.findElement(By.id("promo")).sendKeys(Keys.TAB);
 	
 		WebElement captcha = driver.findElement(By.id("cpatchaTextBox"));
-		Thread.sleep(20000);
+		Thread.sleep(30000);
 		System.out.println(captcha.getText());
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -120,8 +120,8 @@ Select s= new Select(element);
 		  
 		// Personal Details
 		  Thread.sleep(10000);
-			 driver.findElement(By.id("fathers-fullname")).sendKeys("Kumlra");
-			  driver.findElement(By.id("mothers-fullname")).sendKeys("Anisha");
+			 driver.findElement(By.id("fathers-fullname")).sendKeys("Kuamlra");
+			  driver.findElement(By.id("mothers-fullname")).sendKeys("Aniisha");
 			  
 			//Marital status
 			  WebElement ms = driver.findElement(By.id("cust_birth_select_page_3_ccmaritial"));
@@ -199,10 +199,30 @@ Thread.sleep(10000);
 			driver.findElement(By.xpath("//option[@value='20']")).click();
 			Thread.sleep(10000);
 			driver.findElement(By.id("paymentbutton")).click();
+			WebElement button = driver.findElement(By.id("paymentbutton"));
+			//Define the expected text when button changes to "submit" state
+			/*
+			 * String expectedText = "submit"; while (true) { // Refresh the page
+			 * driver.navigate().refresh();
+			 * 
+			 * // Find the button element again button =
+			 * driver.findElement(By.id("paymentbutton"));
+			 * 
+			 * // Get the current text of the button String buttonText = button.getText();
+			 * 
+			 * // Check if the button text has changed to "submit" if
+			 * (buttonText.equals(expectedText)) { // If yes, break out of the loop break; }
+			 * 
+			 * // Add a delay (optional) to avoid refreshing too frequently try {
+			 * Thread.sleep(1000); // Wait for 1 second before refreshing again } catch
+			 * (InterruptedException e3) { e3.printStackTrace(); } }
+			 */
+			
 			//driver.navigate().refresh();
+			
 			//Manually refresh 
 			//driver.navigate().refresh();
-			Thread.sleep(50000);
+			Thread.sleep(10000);
 			
 		   // WebElement element2 = driver.findElement(By.id("paymentbutton"));
 		   // js.executeScript("argument[0].click()", element2);
@@ -210,22 +230,17 @@ Thread.sleep(10000);
 		    
 		    
 	//Video kyc
-	/*
-	 * driver.findElement(By.
-	 * xpath("(//button[@class='new-method has-tooltip false svelte-1d17g67'])[2]"))
-	 * .click();
-	 * 
-	 * driver.findElement(By.
-	 * xpath("(//label[@class='radio-label mfix svelte-1te52k3'])[6]")).click();
-	 * 
-	 * driver.findElement(By.id("redesign-v15-cta")).click();
-	 * 
-	 * driver.navigate().to(
-	 * "https://api.razorpay.com/v1/gateway/mocksharp/payment?key_id=rzp_test_JO0ozLYi5tmHj4"
-	 * );
-	 * 
-	 * driver.findElement(By.id("//button[@class='success']")).click();
-	 */
+	
+	 driver.findElement(By.xpath("//button[@method='netbanking']")).click();
+	  
+	  driver.findElement(By.xpath("(//div[@class='mchild item-inner svelte-1te52k3'])[5]")).click();
+	  
+	  driver.findElement(By.id("redesign-v15-cta")).click();
+	  
+	  driver.navigate().to("https://api.razorpay.com/v1/gateway/mocksharp/payment?key_id=rzp_test_JO0ozLYi5tmHj4");
+	  
+	  driver.findElement(By.id("//button[@class='success']")).click();
+	 
 			
 			 
 			 
